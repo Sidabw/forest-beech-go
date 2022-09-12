@@ -15,16 +15,21 @@ func needFloat(x float64) float64 {
 	return x * 0.1
 }
 
-
 func main() {
- 	fmt.Println(needInt(Small))
+	fmt.Println(needInt(Small))
 	fmt.Println(needFloat(Small))
 	fmt.Println(needFloat(Big))
-//	fmt.Println(needInt(Big)) 
+	//	fmt.Println(needInt(Big))
 
-//常量const关键字同var类似
-const Pi = 3.14
-fmt.Println(Pi)
+	//常量const关键字同var类似
+	const Pi = 3.14
+	fmt.Println(Pi)
+
+	//定义变量的三种方式
+	const a = 1
+	var b = 2
+	c := 3
+	fmt.Println(a, b, c)
 }
 
 /*
@@ -32,5 +37,3 @@ int 可以存放最大64位的整数，根据平台不同有时会更少。
 一个未指定类型的常量由上下文来决定其类型。
 
 */
-
-
