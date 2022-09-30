@@ -57,7 +57,7 @@ func main() {
 	//index out of range
 	//fmt.Println(s[0])
 
-	fmt.Println("makeing slices test--------------------------------------->")
+	fmt.Println("making slices test--------------------------------------->")
 	a := make([]int, 5)
 	fmt.Print("a: ")
 	printSlices(a)

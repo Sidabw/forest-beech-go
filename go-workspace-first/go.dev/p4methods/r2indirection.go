@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 /*
 补充：
@@ -21,6 +24,10 @@ Scale
 func (v *Vertex3) Scale(f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
+}
+
+func (v *Vertex3) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 /*

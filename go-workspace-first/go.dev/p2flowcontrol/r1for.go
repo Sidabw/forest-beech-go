@@ -28,6 +28,7 @@ func main() {
 	/* for {
 	   fmt.Println(1)
 	 }*/
+	//TODO where is goto? break? continue?
 }
 
 /*

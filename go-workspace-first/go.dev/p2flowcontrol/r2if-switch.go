@@ -12,6 +12,7 @@ func sqrt(x float64) string {
 	if x < 0 {
 		return sqrt(-x) + "i"
 	}
+	//转成字符串这么麻烦吗
 	return fmt.Sprint(math.Sqrt(x))
 }
 
