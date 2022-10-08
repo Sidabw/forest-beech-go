@@ -58,14 +58,15 @@ func main() {
 
 	a = f
 	//以下编译报错，
-	//a = v3
+	//a = v5
+	//因为v5.Abs()是(&v5).Abs()的indirection，但接口不行
 	//这样就好了
 	a = &v5
 	a = v6
 
 	v2 := Vertex4{1, 3}
 	a = v2
-	fmt.Println(a.Abs())
+	fmt.Println("Vertex4 Abs()", a.Abs())
 	//以上总结：
 	//Myfloat implements Abser
 	//*VerTex3 implements Abser
