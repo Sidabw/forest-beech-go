@@ -13,9 +13,11 @@ func main() {
 	fmt.Printf("v2 is of type %T \n", v2)
 
 	f1 := 3.142
-	//guess 0.5i 精度？
+	//定义一个复数，有关复数的更多内容，参考，印象笔记，《数学之美-杂录》
+	//总结一句话：Java怎么表示一个有理数（无限循环小数）、怎么表示一个无理数（math.Pi）、怎么表示一个虚数？
+	//尴尬的就是Java没有复数这个概念...
 	var f2 = 0.876 + 0.5i
 	fmt.Printf("f1 is of type %T \n", f1)
-	fmt.Printf("f2 is of type %T \n", f2)
+	fmt.Printf("f2 is of type %T , for value: %v \n", f2, f2)
 
 }

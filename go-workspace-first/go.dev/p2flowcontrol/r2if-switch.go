@@ -10,14 +10,15 @@ import (
 func sqrt(x float64) string {
 	//1. standard if statement
 	if x < 0 {
+		//这给你厉害的，还返回一个虚数...
 		return sqrt(-x) + "i"
 	}
-	//转成字符串这么麻烦吗
+	//Sprint系列函数会把传入的数据生成并返回一个字符串。
 	return fmt.Sprint(math.Sqrt(x))
 }
 
 func pow(x, n, lim float64) float64 {
-	//2. a short statement befor if
+	//2. a short statement before if
 	//pow 返回x的y次幂
 	if v := math.Pow(x, n); v < lim {
 		return v
@@ -65,8 +66,8 @@ func main() {
 	}
 
 	//4. switch statement-3 : if   else if    else if
-	//因为go只有if else
 	//这里switch 后是不跟判断条件的
+	//因为go只有if else
 	t := time.Now()
 	switch {
 	case t.Hour() < 12:

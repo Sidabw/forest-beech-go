@@ -11,14 +11,13 @@ import (
 */
 
 func main() {
-  fmt.Printf("Now you have %g problems. \n", math.Sqrt(7))
-  fmt.Println(math.Pi)
-  
-  /* 
-  引用一个包时，只能引用其‘已导出’的名字；如果一个名字已大写开头那它就是已导出的；
-  类似math.Pi    fmt.Printf
-  */
+	//%g 浮点数
+	fmt.Printf("Now you have %g problems. \n", math.Sqrt(7))
+	fmt.Println(math.Pi)
+
+	/*
+	  引用一个包时，只能引用其‘已导出’的名字；如果一个名字已大写开头那它就是已导出的；
+	  类似math.Pi    fmt.Printf
+	*/
 
 }
-
-

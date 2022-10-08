@@ -12,6 +12,9 @@ func main() {
 	   3.slices有个头，有个尾，构成一个区间，并指向原始数组
 	*/
 
+	var slice0 = []int{1}
+	fmt.Println("定义了一个切片：", slice0) //删掉声明数组时的个数。
+
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 	//数组切割, 角标从0开始，包头不保尾
 	//切割后不产生新的数据，即改变slice数组的内容，原始primes数组也会变
@@ -39,11 +42,12 @@ func main() {
 	   2. len是slice内元素的个数，capacity是该slice的下层数组的长度
 	*/
 	lc := []int{2, 3, 5, 7, 11, 13}
-	fmt.Println("原始数组: ", lc)
+	fmt.Println("原始切片: ", lc)
 	lc = lc[:4]
 	printSlices(lc)
 
 	//这种切法，会直接把slice的下层数组的前两个元素给丢掉
+	//会改变cap
 	lc = lc[2:]
 	printSlices(lc)
 

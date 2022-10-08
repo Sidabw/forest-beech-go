@@ -10,6 +10,7 @@ func main() {
 	var a = "kkk哈哈"
 	fmt.Println(len(a)) //得9，因为得到得byte[]得长度
 	for _, bValue := range a {
+		//%c该值对应的unicode码值
 		fmt.Printf("%v %c  ", bValue, bValue)
 		//fmt.Println(bIndex, bValue)
 	}

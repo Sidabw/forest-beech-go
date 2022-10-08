@@ -28,7 +28,28 @@ func main() {
 	/* for {
 	   fmt.Println(1)
 	 }*/
-	//TODO where is goto? break? continue?
+
+	//5. break? continue? in for and label
+Label1:
+	for sum < 3000 {
+		sum += 2
+		if sum == 2500 {
+			fmt.Println("break for loop")
+			//continue同理不再演示
+			break Label1
+		}
+	}
+
+	//6. goto?
+	//goto用于在判断语句中跳到指定行。不推荐使用。
+	if sum == 2500 {
+		goto Label2
+	}
+	fmt.Println("1 Has this proceeded ?")
+	fmt.Println("2 Has this proceeded ?")
+	fmt.Println("3 Has this proceeded ?")
+Label2:
+	fmt.Println("This has proceeded.")
 }
 
 /*
