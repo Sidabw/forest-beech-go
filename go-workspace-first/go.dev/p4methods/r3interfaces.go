@@ -88,17 +88,19 @@ func main() {
 	aa = 1
 	fmt.Printf("(%v, %T)\n", aa, aa)
 	aa = "aaa"
+	fmt.Printf("(%v, %T)\n", aa, aa)
 	//fmt.Println的参数列表就是一个empty interface
-	fmt.Println(aa)
+	//fmt.Println()
 
 	fmt.Println("//Type assertions")
 	//Type assertions
 	var bb interface{} = "bbb"
 	fmt.Printf("(%v, %T)\n", bb, bb)
-	b2 := bb.(string) //这就叫Type assertions
+	//这就叫Type assertions
+	//强转，失败就panic, 程序终止。
+	b2 := bb.(string)
 	fmt.Printf("(%v, %T)\n", b2, b2)
-	//这相当于是一个测试方法，上面是强转，失败就panic
-	//这个失败b2Val则被赋零值
+	//这相当于是一个测试方法，失败时b2Val则被赋零值
 	b2Val, isStr := bb.(string)
 	fmt.Println(b2Val, isStr)
 

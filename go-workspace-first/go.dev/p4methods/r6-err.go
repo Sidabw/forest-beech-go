@@ -22,4 +22,6 @@ func main() {
 		return
 	}
 	fmt.Println(sqrt)
+
+	//error & panic 参考topgoer.com/p3func/r7-err
 }

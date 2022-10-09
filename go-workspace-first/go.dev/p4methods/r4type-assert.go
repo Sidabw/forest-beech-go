@@ -7,9 +7,9 @@ func typeSwitchTest(a interface{}) {
 	switch b := a.(type) {
 	case int:
 		//不用强转了
-		fmt.Println(b * 2)
+		fmt.Println("int coming in", b*2)
 	case string:
-		fmt.Println(len(b))
+		fmt.Println("string coming in", len(b))
 	default:
 		fmt.Println("default in ...")
 	}
