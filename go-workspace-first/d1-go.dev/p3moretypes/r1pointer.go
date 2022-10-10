@@ -14,6 +14,12 @@ func main() {
 		以下会报错，那这个*T有什么用呢
 		*p = 2
 		fmt.Println(*p)
+
+		一般用于参数列表声明。要一个指针。
+		如果非要这样用，可以加一行；new的作用是分配内存。make同理,只不过make只用于slice、map
+		p = new(int)
+		*p = 2
+		fmt.Println("p = new(int)  ----->    ", *p)
 	*/
 
 	//&运算符生成指向其操作数的指针。
