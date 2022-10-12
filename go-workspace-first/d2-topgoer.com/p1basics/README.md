@@ -71,6 +71,8 @@ type error interface {
 * go env用于打印Go语言的环境信息。
 * go run命令可以编译并运行命令源码文件。
 * go get可以根据要求和实际情况从互联网上下载或更新指定的代码包及其依赖包，并对它们进行编译和安装。
+  * go get github.com/jmoiron/sqlx
+  * 下载下来的包则会位于${GOPATH}/src/github.com/jmoiron/sqlx
 * go build命令用于编译我们指定的源码文件或代码包以及它们的依赖包。
 * go install用于编译并安装指定的代码包及它们的依赖包。
 * go clean命令会删除掉执行其它命令时产生的一些文件和目录。
