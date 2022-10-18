@@ -1,13 +1,22 @@
 package main
 
-import "fmt"
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 /* 也可以写成分组导入的形式。分组导入是推荐的
 import (
   "fmt"
   "math"
 )
+*/
+
+/*
+import f "fmt"，为标准库起一个别名，而后调用 fmt.Println("") 可以使用 f.Println("")
+import . "fmt"，将 fmt 启用别名"."，这样就可以直接使用其内容，而不用再加 fmt，例如fmt.Println("") 可以直接写成 Println("")
+import _ "samples/util"，表示不使用该包，而是只执行下该包的 init 函数
+
 */
 
 func main() {

@@ -8,7 +8,7 @@ import "fmt"
 
 //Vertex 定义一个结构体，名叫Vertex(顶点)，包含两个字段 X Y
 type Vertex struct {
-	X int `x标:"a"`
+	X int `x:"a"`
 	Y int
 }
 
