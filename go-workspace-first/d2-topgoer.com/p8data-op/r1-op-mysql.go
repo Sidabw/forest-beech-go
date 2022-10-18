@@ -29,10 +29,10 @@ func init() {
 
 func main() {
 	defer Db.Close()
-	//insertLearn()
+	insertLearn()
 	//selectLearn()
 	//updateLearn()
-	deleteLearn()
+	//deleteLearn()
 }
 
 func insertLearn() {
