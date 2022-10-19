@@ -20,4 +20,6 @@
 * go env -w CGO_ENABLED=0
 * 0表示静态编译，默认为1
 * CGO是go语言调用c语言lib库。按照默认启用的话，打出来的可执行文件就会依赖客户电脑上的c库
+* 交叉编译时，必须禁用CGO，即设置为0
+  * 在mac上编译得到一个exe就叫做交叉编译
 * [参考](https://blog.csdn.net/qq_43580193/article/details/120305231)

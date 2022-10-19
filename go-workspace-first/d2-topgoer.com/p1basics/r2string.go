@@ -50,4 +50,12 @@ func main() {
 	r[0] = '哈' //单引号
 	fmt.Println("rune test: len:, ", len(r), " value ", string(r))
 
+	//eq比较
+	//忽略大小写
+	fmt.Println("eq? ", strings.EqualFold("Ab", "ab"))
+	//不忽略
+	fmt.Println("eq? ", strings.Compare("Abn", "abn"))
+	//最快的
+	fmt.Println("eq? ", "AB啊" == "AB啊")
+
 }
