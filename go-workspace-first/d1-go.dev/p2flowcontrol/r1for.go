@@ -40,6 +40,14 @@ Label1:
 		}
 	}
 
+	for sum < 4000 {
+		sum += 1
+		if sum == 3333 {
+			fmt.Println("break for loop using a simple break")
+			break
+		}
+	}
+
 	//6. goto?
 	//goto用于在判断语句中跳到指定行。不推荐使用。
 	if sum == 2500 {
@@ -54,5 +62,5 @@ Label2:
 
 /*
 1. Go has only one looping construct, the for loop.
-2. the variables declared there are visible only in the scope of the for statement
+2. same as Java: the variables declared there are visible only in the scope of the for statement
 */

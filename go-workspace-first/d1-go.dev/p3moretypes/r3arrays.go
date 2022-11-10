@@ -14,6 +14,7 @@ func main() {
 	fmt.Println(primes)
 
 	//3. 构建一个结构体数组
+	//这应该是个切片吧
 	primes3 := []struct {
 		i int
 		j bool
