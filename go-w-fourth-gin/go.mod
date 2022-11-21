@@ -1,4 +1,4 @@
-module sidabw.com/forest-beech-go/go-w-fourth-gin/gin-w-1
+module sidabw.com/forest-beech-go/go-w-fourth-gin
 
 go 1.17
 
