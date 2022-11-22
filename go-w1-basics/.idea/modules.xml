@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../go-w1-basics/.idea/go-w1-basics.iml" filepath="$PROJECT_DIR$/../go-w1-basics/.idea/go-w1-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go-w2-build/.idea/go-w2-build.iml" filepath="$PROJECT_DIR$/../go-w2-build/.idea/go-w2-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go-w3-mod/.idea/go-w3-mod.iml" filepath="$PROJECT_DIR$/../go-w3-mod/.idea/go-w3-mod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go-w4-gin/.idea/go-w4-gin.iml" filepath="$PROJECT_DIR$/../go-w4-gin/.idea/go-w4-gin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go-w5-makefile/.idea/go-w5-makefile.iml" filepath="$PROJECT_DIR$/../go-w5-makefile/.idea/go-w5-makefile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go-w6-echo/.idea/go-w6-echo.iml" filepath="$PROJECT_DIR$/../go-w6-echo/.idea/go-w6-echo.iml" />
+    </modules>
+  </component>
+</project>

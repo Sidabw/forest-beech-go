@@ -7,7 +7,7 @@ import (
 )
 
 func HaHaHa() {
-	fmt.Println("HaHaHa from go-w-third-mod")
+	fmt.Println("HaHaHa from go-w3-mod")
 
 	service.HeHeHe()
 }

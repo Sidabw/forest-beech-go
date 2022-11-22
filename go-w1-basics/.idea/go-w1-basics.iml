@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="Go" enabled="true" />
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="go-w2-build" />
+    <orderEntry type="module" module-name="go-w3-mod" />
+    <orderEntry type="module" module-name="go-w4-gin" />
+    <orderEntry type="module" module-name="go-w5-makefile" />
+  </component>
+</module>
