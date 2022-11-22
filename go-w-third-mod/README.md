@@ -17,3 +17,4 @@
 * create go.mod：go mod init github.com/sidabw/go-w-third-mod
 * create go.sum：go mod tidy
 * 完事了，可以运行main.go了
+* 拉包拉不下来可以：go env -w GOPROXY=https://goproxy.io,direct
