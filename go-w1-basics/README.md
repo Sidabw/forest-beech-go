@@ -6,3 +6,12 @@
 * https://go.dev/learn/
 * https://go.dev/tour/methods/9
 * https://go.dev/tour/list
+
+
+#### why go
+> Java有NIO，为啥要用go？说一下自己的理解
+* Java只有JIT识别的热点代码才会转成机器码直接执行，其他都是解释执行
+* GO直接编译成机器码。这是差距。
+* 至于协程 VS NIO，这个争议还是比较大的
+* GO的用处，还是在更快的扩容上吧，启动一个GO和冷启动一个Java，时间还是差别很多的
+* 听过golang作为web服务器，qps轻轻松松上4w？需要测下
