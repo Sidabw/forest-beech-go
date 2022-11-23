@@ -1,6 +1,6 @@
 module github.com/sidabw/go-w6-echo
 
-go 1.19
+go 1.17
 
 require github.com/labstack/echo v3.3.10+incompatible
 
