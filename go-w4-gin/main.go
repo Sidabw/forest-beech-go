@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 
 		//获取query string
 		name := context.DefaultQuery("name", "hhh")
-		fmt.Println("get name from qs: ", name)
+		fmt.Printf("get name from qs: %v when %v \n", name, time.Now())
 
 		context.String(http.StatusOK, "hello world")
 
