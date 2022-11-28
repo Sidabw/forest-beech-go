@@ -1,12 +1,13 @@
-package main
+package data_op
 
 import (
 	"fmt"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 )
 
-//import "github.com/go-sql-driver/mysql"
+// import "github.com/go-sql-driver/mysql"
 type User struct {
 	Id    int    `db:"id"`
 	Name  string `db:"name"`
@@ -17,22 +18,22 @@ type User struct {
 var Db *sqlx.DB
 
 func init() {
-	//https://www.topgoer.com/数据库操作/go操作mysql/mysql使用.html
+	// https://www.topgoer.com/数据库操作/go操作mysql/mysql使用.html
 	database, err := sqlx.Open("mysql", "root:root@tcp(127.0.0.1:3306)/mysql8_first_db")
 	if err != nil {
 		fmt.Println("open mysql fail", err)
 		return
 	}
-	//不明白：Db, err := sqlx.Open,,, 为啥不行
+	// 不明白：Db, err := sqlx.Open,,, 为啥不行
 	Db = database
 }
 
-func main() {
+func R1OpMysql() {
 	defer Db.Close()
 	insertLearn()
-	//selectLearn()
-	//updateLearn()
-	//deleteLearn()
+	// selectLearn()
+	// updateLearn()
+	// deleteLearn()
 }
 
 func insertLearn() {
@@ -70,7 +71,7 @@ func updateLearn() {
 		return
 	}
 	affected, _ := exec.RowsAffected()
-	//第一次3，第二次0，后面。。。0
+	// 第一次3，第二次0，后面。。。0
 	fmt.Println("rows affected: ", affected)
 }
 
