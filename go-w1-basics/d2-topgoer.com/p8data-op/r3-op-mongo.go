@@ -2,6 +2,7 @@ package data_op
 
 import (
 	"context"
+	"example.com/hello/d2-topgoer.com/p8data-op/pojo"
 	"fmt"
 	"time"
 
@@ -12,6 +13,8 @@ import (
 
 func R3OpMongo() {
 	// 毕竟这个context不知道是啥意思,,,
+	// 更多参考：https://www.mongodb.com/docs/drivers/go/current/fundamentals/crud/read-operations/query-document/
+	// 只是初步写了点
 	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
 	defer cancel()
 	connect, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoUri))
@@ -40,4 +43,17 @@ func R3OpMongo() {
 		}
 		fmt.Println("result:", result)
 	}
+
+	// bson.D是一个slice
+	// 更多bson.D M A E 参考：https://www.mongodb.com/docs/drivers/go/current/fundamentals/bson/
+	filter := bson.D{
+		{"roomId", bson.D{{"$gt", 123}, {"$lt", 20137763}}}}
+	one := collection.FindOne(ctx, filter)
+	var r2 pojo.RoomSetting
+	err = one.Decode(&r2)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(r2)
 }

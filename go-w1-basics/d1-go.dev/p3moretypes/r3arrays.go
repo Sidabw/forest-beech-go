@@ -24,4 +24,10 @@ func main() {
 	}
 	fmt.Println(primes3)
 
+	var primes4 = []Vertex{
+		{1, 2},
+		{2, 3},
+	}
+	fmt.Println(primes4[0])
+
 }
