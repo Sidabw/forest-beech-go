@@ -8,7 +8,7 @@ import (
 
 func R2OpRedis() {
 	// part-1 conn test
-	conn, err := redis.Dial("tcp", addr)
+	conn, err := redis.Dial("tcp", redisAddr)
 	if err != nil {
 		fmt.Println("fail: ", err)
 		return
@@ -22,7 +22,7 @@ func R2OpRedis() {
 		}
 	}(conn)
 	// auth
-	if _, err := conn.Do("auth", pass); err != nil {
+	if _, err := conn.Do("auth", redisPass); err != nil {
 		fmt.Println("auth fail", err)
 	}
 

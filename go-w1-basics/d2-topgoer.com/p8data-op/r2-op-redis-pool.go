@@ -16,12 +16,12 @@ func init() {
 		IdleTimeout: 10,
 		Dial: func() (redis.Conn, error) {
 			// dial
-			conn, err := redis.Dial("tcp", addr)
+			conn, err := redis.Dial("tcp", redisAddr)
 			if err != nil {
 				return nil, err
 			}
 			// auth
-			if _, err := conn.Do("auth", pass); err != nil {
+			if _, err := conn.Do("auth", redisPass); err != nil {
 				fmt.Println("auth fail", err)
 			}
 			return conn, err
