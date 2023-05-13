@@ -35,7 +35,6 @@ Label1:
 		sum += 2
 		if sum == 2500 {
 			fmt.Println("break for loop")
-			//continue同理不再演示
 			break Label1
 		}
 	}
@@ -45,6 +44,9 @@ Label1:
 		if sum == 3333 {
 			fmt.Println("break for loop using a simple break")
 			break
+		}
+		if sum == 2 {
+			continue
 		}
 	}
 

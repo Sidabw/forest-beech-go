@@ -37,6 +37,7 @@ func main() {
 
 	//意思就是iota每行+1
 	//第一行的算数表达式也会'继承下来'
+	//按列继承啊...
 	fmt.Println(a, b)
 	fmt.Println(a1, b1)
 	fmt.Println(a2, b2)

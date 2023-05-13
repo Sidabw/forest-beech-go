@@ -30,6 +30,7 @@ func hello() {
 }
 
 //原来struct还可以这样用？ 都不用构建啊....
+//230513:这是定义了一个变量啊....
 var wg sync.WaitGroup
 
 func learn2() {

@@ -31,6 +31,7 @@ func (v *Vertex) Scale(f float64) {
 MyFloat
 3. 第3种定义method的方式，定义一个type，不需要struct。有人会这么用吗？包括上面的，直接定义一个function不香吗
 官方的说法同样是：p4methods is function
+230513:下一节迂回指针难道不够说明问题吗？
 */
 type MyFloat float64
 
@@ -45,6 +46,7 @@ func main() {
 	v := Vertex{2, 4}
 	fmt.Println(v.Abs())
 
+	//创建对象，调用方法
 	f := MyFloat(-math.Sqrt2)
 	fmt.Println(f.Abs())
 

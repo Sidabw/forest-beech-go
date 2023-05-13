@@ -4,6 +4,7 @@ import "fmt"
 
 func typeSwitchTest(a interface{}) {
 	//这个相比Java省了挺多代码的...
+	//后续的jdk进行了优化。instanceof 之后就不用强转了
 	switch b := a.(type) {
 	case int:
 		//不用强转了
