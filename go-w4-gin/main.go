@@ -1,10 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"time"
 )
 
 func main() {
@@ -12,10 +10,10 @@ func main() {
 	r.GET("/hello", func(context *gin.Context) {
 
 		//获取query string
-		name := context.DefaultQuery("name", "hhh")
-		fmt.Printf("get name from qs: %v when %v \n", name, time.Now())
+		//name := context.DefaultQuery("name", "hhh")
+		//fmt.Printf("get name from qs: %v when %v \n", name, time.Now())
 
-		context.String(http.StatusOK, "hello world")
+		context.String(http.StatusOK, "hello world..")
 
 	})
 	r.Run(":8011")
