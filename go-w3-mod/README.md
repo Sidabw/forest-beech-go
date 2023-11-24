@@ -6,7 +6,7 @@
 * GO111MODULE=on，go命令行会使用modules，而一点也不会去GOPATH目录下查找。
 * 当modules功能启用时，依赖包的存放位置变更为$GOPATH/pkg/mod/
 * 如下展示了dirtyword项目的依赖库的位置
-![](doc/p-go-lib-location.png)
+![](p-go-lib-location.png)
 
 
 ### part-2

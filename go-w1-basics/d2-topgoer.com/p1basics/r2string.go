@@ -13,7 +13,7 @@ func main() {
 	//字符串常规操作
 	a1 := "啊哈哈哈"
 	fmt.Println("len(a1) : ", len(a1)) //得9，因为得到得byte[]得长度
-	//字符串拼接
+	//字符串拼接的两种方式
 	a2 := a1 + "卡卡卡"
 	a3 := fmt.Sprintf("字符串:%v", a2)
 	fmt.Println("a3---->", a3)

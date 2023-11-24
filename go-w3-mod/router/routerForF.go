@@ -3,7 +3,7 @@ package router
 import (
 	"fmt"
 
-	"github.com/sidabw/go-w-third-mod/service"
+	myService "github.com/sidabw/go-w-third-mod/service"
 )
 
 func HaHaHa() {
@@ -11,5 +11,5 @@ func HaHaHa() {
 
 	//函数调用这样没问题
 	//如果要用service包下面的type xx struct的话，对应文件名也得大写
-	service.HeHeHe()
+	myService.HeHeHe()
 }

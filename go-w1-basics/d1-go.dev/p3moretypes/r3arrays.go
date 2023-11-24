@@ -14,8 +14,7 @@ func main() {
 	fmt.Println(primes)
 
 	//3. 构建一个结构体数组
-	//这应该是个切片吧
-	primes3 := []struct {
+	primes3 := [2]struct {
 		i int
 		j bool
 	}{
@@ -24,7 +23,7 @@ func main() {
 	}
 	fmt.Println(primes3)
 
-	var primes4 = []Vertex{
+	var primes4 = [2]Vertex{
 		{1, 2},
 		{2, 3},
 	}

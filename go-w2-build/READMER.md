@@ -16,6 +16,9 @@
 * go env -w GOARCH=amd64
 * go build -o main-windows.exe main.go
 
+#### 打linux可执行文件
+* go env -w GOOS=linux
+
 #### CGO_ENABLED==0 ？
 * go env -w CGO_ENABLED=0
 * 0表示静态编译，默认为1
