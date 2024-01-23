@@ -20,6 +20,10 @@ func main() {
 	//now2.Unix()得到的是秒，UnixMilli得到的才是毫秒
 	fmt.Printf("current timestamp, default timestamp[UnixTimeStamp]: %v \n", now2.Unix())
 	fmt.Printf("UnixMilli: %v, UnixMicro: %v, UnixNano: %v \n", now2.UnixMilli(), now2.UnixMicro(), now2.UnixNano())
+	tmp1 := time.Now().UnixMilli()
+	time.Sleep(time.Millisecond * 233)
+	tmp2 := time.Now().UnixMilli()
+	fmt.Println(tmp2 - tmp1)
 
 	//part-3，时间戳转时间
 	now3 := time.Unix(now2.Unix(), 0)

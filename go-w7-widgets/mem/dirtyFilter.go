@@ -1,4 +1,4 @@
-package utils
+package mem
 
 import (
 	"io"
@@ -34,4 +34,6 @@ type DirtyFilter interface {
 	// delim 替换的字符
 	// 如果出现异常，则返回error
 	Replace(text string, delim rune) (string, error)
+
+	ToJson() (string, error)
 }

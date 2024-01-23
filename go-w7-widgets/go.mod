@@ -2,7 +2,10 @@ module w7_widgets
 
 go 1.19
 
-require github.com/dgraph-io/ristretto v0.1.1
+require (
+	github.com/dgraph-io/ristretto v0.1.1
+	github.com/streadway/amqp v1.1.0
+)
 
 require (
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect

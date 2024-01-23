@@ -1,8 +1,10 @@
-package utils
+package mem
 
 import (
 	"bufio"
 	"bytes"
+	"encoding/json"
+	"fmt"
 	"io"
 	"strings"
 )
@@ -11,7 +13,7 @@ import (
 // 从可读流中读取敏感词数据(以指定的分隔符读取数据)
 func NewNodeReaderFilter(rd io.Reader, delim byte) DirtyFilter {
 	nf := &nodeFilter{
-		root: newNode(),
+		Root: newNode(),
 	}
 	buf := new(bytes.Buffer)
 	io.Copy(buf, rd)
@@ -35,7 +37,7 @@ func NewNodeReaderFilter(rd io.Reader, delim byte) DirtyFilter {
 // 从通道中读取敏感词数据
 func NewNodeChanFilter(text <-chan string) DirtyFilter {
 	nf := &nodeFilter{
-		root: newNode(),
+		Root: newNode(),
 	}
 	for v := range text {
 		nf.addDirtyWords(v)
@@ -47,7 +49,7 @@ func NewNodeChanFilter(text <-chan string) DirtyFilter {
 // 从切片中读取敏感词数据
 func NewNodeFilter(text []string) DirtyFilter {
 	nf := &nodeFilter{
-		root: newNode(),
+		Root: newNode(),
 	}
 	for i, l := 0, len(text); i < l; i++ {
 		nf.addDirtyWords(text[i])
@@ -57,33 +59,33 @@ func NewNodeFilter(text []string) DirtyFilter {
 
 func newNode() *node {
 	return &node{
-		child: make(map[rune]*node),
+		Child: make(map[rune]*node),
 	}
 }
 
 type node struct {
-	end   bool
-	child map[rune]*node
+	End   bool           `json:"End"`
+	Child map[rune]*node `json:"Child"`
 }
 
 type nodeFilter struct {
-	root *node
+	Root *node `json:"Root"`
 }
 
 func (nf *nodeFilter) addDirtyWords(text string) {
 	text = strings.TrimSpace(text)
-	n := nf.root
+	n := nf.Root
 	uchars := []rune(text)
 	for i, l := 0, len(uchars); i < l; i++ {
 		// if unicode.IsSpace(uchars[i]) {
 		// 	continue
 		// }
-		if _, ok := n.child[uchars[i]]; !ok {
-			n.child[uchars[i]] = newNode()
+		if _, ok := n.Child[uchars[i]]; !ok {
+			n.Child[uchars[i]] = newNode()
 		}
-		n = n.child[uchars[i]]
+		n = n.Child[uchars[i]]
 	}
-	n.end = true
+	n.End = true
 }
 
 func (nf *nodeFilter) Filter(text string, excludes ...rune) ([]string, error) {
@@ -100,6 +102,13 @@ func (nf *nodeFilter) FilterResult(text string, excludes ...rune) (map[string]in
 	buf := bytes.NewBufferString(text)
 	defer buf.Reset()
 	return nf.FilterReaderResult(buf, excludes...)
+}
+
+func (nf *nodeFilter) ToJson() (string, error) {
+	p, _ := json.Marshal(*nf)
+	p2 := string(p)
+	//a := rune(p.(uint8[]))
+	return fmt.Sprintf("filter str: %s \n", p2), nil
 }
 
 func (nf *nodeFilter) FilterReader(reader io.Reader, excludes ...rune) ([]string, error) {
@@ -175,28 +184,28 @@ func (nf *nodeFilter) doFilter(uchars []rune, data map[string]int) {
 	var result []string
 	ul := len(uchars)
 	buf := new(bytes.Buffer)
-	n := nf.root
+	n := nf.Root
 	for i := 0; i < ul; i++ {
-		if _, ok := n.child[uchars[i]]; !ok {
+		if _, ok := n.Child[uchars[i]]; !ok {
 			continue
 		}
-		n = n.child[uchars[i]]
+		n = n.Child[uchars[i]]
 		buf.WriteRune(uchars[i])
-		if n.end {
+		if n.End {
 			result = append(result, buf.String())
 		}
 		for j := i + 1; j < ul; j++ {
-			if _, ok := n.child[uchars[j]]; !ok {
+			if _, ok := n.Child[uchars[j]]; !ok {
 				break
 			}
-			n = n.child[uchars[j]]
+			n = n.Child[uchars[j]]
 			buf.WriteRune(uchars[j])
-			if n.end {
+			if n.End {
 				result = append(result, buf.String())
 			}
 		}
 		buf.Reset()
-		n = nf.root
+		n = nf.Root
 	}
 	for i, l := 0, len(result); i < l; i++ {
 		var c int
@@ -211,32 +220,32 @@ func (nf *nodeFilter) doIndexes(uchars []rune) (idexs []int) {
 	var (
 		tIdexs []int
 		ul     = len(uchars)
-		n      = nf.root
+		n      = nf.Root
 	)
 	for i := 0; i < ul; i++ {
-		if _, ok := n.child[uchars[i]]; !ok {
+		if _, ok := n.Child[uchars[i]]; !ok {
 			continue
 		}
-		n = n.child[uchars[i]]
+		n = n.Child[uchars[i]]
 		tIdexs = append(tIdexs, i)
-		if n.end {
+		if n.End {
 			idexs = nf.appendTo(idexs, tIdexs)
 			tIdexs = nil
 		}
 		for j := i + 1; j < ul; j++ {
-			if _, ok := n.child[uchars[j]]; !ok {
+			if _, ok := n.Child[uchars[j]]; !ok {
 				break
 			}
-			n = n.child[uchars[j]]
+			n = n.Child[uchars[j]]
 			tIdexs = append(tIdexs, j)
-			if n.end {
+			if n.End {
 				idexs = nf.appendTo(idexs, tIdexs)
 			}
 		}
 		if tIdexs != nil {
 			tIdexs = nil
 		}
-		n = nf.root
+		n = nf.Root
 	}
 	return
 }
