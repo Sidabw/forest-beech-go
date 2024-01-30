@@ -50,6 +50,9 @@ func main() {
 	r[0] = '哈' //单引号
 	fmt.Println("rune test: len:, ", len(r), " value ", string(r))
 
+	r2 := make([]rune, 1000)
+	r2[0] = 'a'
+
 	//eq比较
 	//忽略大小写
 	fmt.Println("eq? ", strings.EqualFold("Ab", "ab"))

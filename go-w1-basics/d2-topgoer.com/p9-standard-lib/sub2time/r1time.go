@@ -10,9 +10,10 @@ func main() {
 	now := time.Now()
 	fmt.Printf("current time: %v \n", now)
 	fmt.Println("current time: : ", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
+	fmt.Println("current time: : ", now.Format("2006-01-02 15:04:05"))
+
 	//%02d 表示留两位，不足补零（往前补）
 	fmt.Printf("%d-%02d-%02d %02d:%02d:%02d \n", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second())
-
 	//part-2， 获取时间戳
 	now2 := time.Now()
 	//时间戳是自1970年1月1日（08:00:00GMT）至当前时间的总毫秒数。它也被称为Unix时间戳（UnixTimestamp）
@@ -31,4 +32,8 @@ func main() {
 
 	//其他time.Duration 时间操作（Add、Sub、Equal、Before、After...） 定时器、时间格式化，先不看了...
 	//我要去复习Java的LocalDateTime了...
+
+	body := make(map[string]interface{})
+	body["a"] = "ddd"
+	fmt.Printf("%s : %s \n", "Failed to publish a message", body)
 }
